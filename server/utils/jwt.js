@@ -1,16 +1,18 @@
 const jwt = require('jsonwebtoken');
 
-const generateToken = (res, userId) => {
-  const token = jwt.sign({ id: userId }, process.env.JWT_SECRET || 'pulsechat_super_secret_jwt_key_production_ready_2026!', {
-    expiresIn: '30d',
-  });
+const isProduction = process.env.NODE_ENV === 'production';
 
-  const isProduction = process.env.NODE_ENV === 'production';
+const generateToken = (res, userId) => {
+  const token = jwt.sign(
+    { id: userId },
+    process.env.JWT_SECRET,
+    { expiresIn: '30d' }
+  );
 
   res.cookie('jwt', token, {
     httpOnly: true,
     secure: isProduction,
-    sameSite: isProduction ? 'strict' : 'lax',
+    sameSite: isProduction ? 'none' : 'lax',
     maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
   });
 
@@ -20,6 +22,8 @@ const generateToken = (res, userId) => {
 const clearToken = (res) => {
   res.cookie('jwt', '', {
     httpOnly: true,
+    secure: isProduction,
+    sameSite: isProduction ? 'none' : 'lax',
     expires: new Date(0),
   });
 };
