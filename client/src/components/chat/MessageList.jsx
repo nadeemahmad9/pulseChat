@@ -121,7 +121,7 @@ export default function MessageList({ onMediaClick, onOpenForward }) {
           y={contextMenu.y}
           isOwn={contextMenu.message.sender?._id === user._id}
           onReply={() => setReplyingToMessage(contextMenu.message)}
-          onReact={() => toggleReaction(contextMenu.message._id, '❤️')}
+          onReact={(emoji) => toggleReaction(contextMenu.message._id, emoji)}
           onForward={() => onOpenForward(contextMenu.message)}
           onCopy={() => navigator.clipboard.writeText(contextMenu.message.content)}
           onEdit={() => setEditingMessage(contextMenu.message)}
