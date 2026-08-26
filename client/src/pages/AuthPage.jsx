@@ -90,8 +90,9 @@ export default function AuthPage() {
       >
         {/* Header */}
         <div className="text-center mb-8">
-          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-indigo-600 text-white shadow-lg mb-4">
-            <MessageSquare className="w-8 h-8" />
+          <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl text-white shadow-lg mb-4">
+            {/* <MessageSquare className="w-8 h-8" /> */}
+            <img className='w-8 h-8' src="chatLogo.png" alt="" />
           </div>
           <h1 className="text-2xl font-bold text-white tracking-tight">PulseChat</h1>
           <p className="text-sm text-gray-300 dark:text-gray-400 mt-1">
@@ -104,8 +105,8 @@ export default function AuthPage() {
           <button
             onClick={() => setAuthMode('email')}
             className={`flex-1 py-2 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition ${authMode === 'email'
-                ? 'bg-indigo-600 text-white shadow-sm'
-                : 'text-gray-400 hover:text-white'
+              ? 'bg-indigo-600 text-white shadow-sm'
+              : 'text-gray-400 hover:text-white'
               }`}
           >
             <Mail className="w-4 h-4" />
@@ -114,8 +115,8 @@ export default function AuthPage() {
           <button
             onClick={() => setAuthMode('mobile')}
             className={`flex-1 py-2 text-xs font-semibold rounded-lg flex items-center justify-center gap-2 transition ${authMode === 'mobile'
-                ? 'bg-emerald-600 text-white shadow-sm'
-                : 'text-gray-400 hover:text-white'
+              ? 'bg-emerald-600 text-white shadow-sm'
+              : 'text-gray-400 hover:text-white'
               }`}
           >
             <Phone className="w-4 h-4" />

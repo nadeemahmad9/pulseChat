@@ -4,8 +4,10 @@ import { MessageSquare, ShieldCheck, Zap } from 'lucide-react';
 export default function EmptyChat({ onStartChat }) {
   return (
     <div className="flex-1 h-full flex flex-col items-center justify-center p-8 bg-[#efeae2]/50 dark:bg-[#0b141a] text-center select-none">
-      <div className="w-20 h-20 rounded-3xl bg-indigo-600/10 dark:bg-indigo-500/20 text-indigo-500 flex items-center justify-center mb-6 shadow-inner">
-        <MessageSquare className="w-10 h-10" />
+      <div className="w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-inner">
+        {/* <MessageSquare className="w-10 h-10" /> */}
+        <img className='w-10 h-10' src="chatLogo.png" alt="" />
+
       </div>
 
       <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 tracking-tight">
