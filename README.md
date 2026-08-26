@@ -46,55 +46,17 @@ It features an end-to-end authentication system (HTTP-only JWT cookies & WhatsAp
 
 ---
 
-## 📁 Monorepo Structure
 
-```text
-chat-app/
-│
-├── client/                     # Vite + React 18 + Tailwind CSS Frontend
-│   ├── src/
-│   │   ├── components/         # Chat, Group, Media, Profile & Common UI Components
-│   │   ├── context/            # Auth, Socket, Chat, Theme & Toast Context Providers
-│   │   ├── hooks/              # Audio Recorder, Debounce, Outside Click hooks
-│   │   ├── layouts/            # Responsive Dual-Pane MainLayout
-│   │   ├── pages/              # AuthPage & ChatPage
-│   │   ├── services/           # Fetch API client & Web Audio Sound synth
-│   │   ├── utils/              # Date formatting & File utility functions
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── package.json
-│   └── vite.config.js
-│
-├── server/                     # Express + Socket.IO + Mongoose Backend
-│   ├── config/                 # MongoDB Mongoose Connection
-│   ├── controllers/            # Auth, User, Conversation, Message & Report Controllers
-│   ├── middleware/             # Auth, Upload & Error Handling Middlewares
-│   ├── models/                 # User, Conversation, Message, Otp & Report Schemas
-│   ├── routes/                 # Express API Router endpoints
-│   ├── sockets/                # Modular Socket.IO handlers (Chat, Presence, Typing)
-│   ├── utils/                  # JWT Token helper
-│   ├── uploads/                # Local media upload storage
-│   ├── tests/                  # Automated API Test suite (`api.test.js`)
-│   ├── app.js
-│   ├── server.js
-│   └── package.json
-│
-├── .env.example
-├── README.md
-└── package.json
-```
-
----
 
 ## ⚙️ Environment Variables
 
 Create `.env` inside `server/`:
 
 ```env
-PORT=3000
-MONGO_URI=mongodb://127.0.0.1:27017/pulsechat
+PORT=your port 
+MONGO_URI=your_mongodb_url/pulsechat
 JWT_SECRET=pulsechat_super_secret_jwt_key_production_ready_2026!
-CLIENT_URL=http://localhost:5173
+CLIENT_URL=your_client_url
 NODE_ENV=development
 ```
 
