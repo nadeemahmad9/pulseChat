@@ -6,7 +6,7 @@ export default function EmptyChat({ onStartChat }) {
     <div className="flex-1 h-full flex flex-col items-center justify-center p-8 bg-[#efeae2]/50 dark:bg-[#0b141a] text-center select-none">
       <div className="w-20 h-20 rounded-3xl flex items-center justify-center mb-6 shadow-inner">
         {/* <MessageSquare className="w-10 h-10" /> */}
-        <img className='w-10 h-10' src="chatLogo.png" alt="" />
+        <img className='w-12 h-12' src="chatLogo.png" alt="" />
 
       </div>
 
