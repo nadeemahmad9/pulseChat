@@ -77,7 +77,7 @@ export default function Welcome({ onGetStarted }) {
                         <div className="absolute -inset-3 rounded-2xl blur-xl opacity-40 animate-pulse" />
                         <div className="relative   rounded-2xl  backdrop-blur-xl flex items-center justify-center shadow-xl">
                             {/* <MessageSquare className="h-10 w-10 md:h-12 md:w-12 text-indigo-400 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" /> */}
-                            <img className="h-10 w-10 md:h-24 md:w-24 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" src="chatLogo.png" alt="" />
+                            <img className="h-14 w-14 md:h-24 md:w-24 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" src="chatLogo.png" alt="" />
                         </div>
                     </motion.div>
                 </motion.div>
