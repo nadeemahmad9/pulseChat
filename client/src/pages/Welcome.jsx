@@ -53,10 +53,10 @@ export default function Welcome({ onGetStarted }) {
                     </span>
                 </div>
 
-                <div className="flex items-center gap-1.5 text-[11px] text-slate-400 bg-slate-900/80 border border-slate-800 backdrop-blur-md px-3 py-1 rounded-full">
+                {/* <div className="flex items-center gap-1.5 text-[11px] text-slate-400 bg-slate-900/80 border border-slate-800 backdrop-blur-md px-3 py-1 rounded-full">
                     <span className="inline-block w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
                     <span>v2.0 Live & Secure</span>
-                </div>
+                </div> */}
             </motion.header>
 
             {/* Hero Content Section */}
@@ -126,13 +126,13 @@ export default function Welcome({ onGetStarted }) {
                     >
                         <div className="flex items-center gap-2.5">
                             <Mail className="h-4 w-4 text-indigo-200" />
-                            <span>Continue with Email</span>
+                            <span>Continue with Email Or Mobile</span>
                         </div>
                         <ArrowRight className="h-4 w-4 text-indigo-200 group-hover:translate-x-1 transition-transform duration-200" />
                     </motion.button>
 
                     {/* Mobile Option */}
-                    <motion.button
+                    {/* <motion.button
                         whileHover={{ scale: 1.02 }}
                         whileTap={{ scale: 0.98 }}
                         onClick={() => onGetStarted('mobile')}
@@ -143,7 +143,7 @@ export default function Welcome({ onGetStarted }) {
                             <span>Continue with Mobile</span>
                         </div>
                         <ArrowRight className="h-4 w-4 text-slate-500 group-hover:text-white group-hover:translate-x-1 transition-transform duration-200" />
-                    </motion.button>
+                    </motion.button> */}
                 </motion.div>
             </motion.main>
 
