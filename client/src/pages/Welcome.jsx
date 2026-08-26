@@ -75,7 +75,7 @@ export default function Welcome({ onGetStarted }) {
                         className="relative"
                     >
                         <div className="absolute -inset-3 bg-linear-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-2xl blur-xl opacity-40 animate-pulse" />
-                        <div className="relative   rounded-2xl bg-slate-900/90 border border-slate-700/60 backdrop-blur-xl flex items-center justify-center shadow-xl">
+                        <div className="relative   rounded-2xl  backdrop-blur-xl flex items-center justify-center shadow-xl">
                             {/* <MessageSquare className="h-10 w-10 md:h-12 md:w-12 text-indigo-400 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" /> */}
                             <img className="h-10 w-10 md:h-24 md:w-24 drop-shadow-[0_0_15px_rgba(99,102,241,0.6)]" src="chatLogo.png" alt="" />
                         </div>
