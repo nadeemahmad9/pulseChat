@@ -198,6 +198,7 @@ export default function MessageBubble({ message, isOwn, onContextMenu, onReact, 
     <div
       onContextMenu={(e) => {
         e.preventDefault();
+        if (message.isDeleted) return;
         onContextMenu(e, message);
       }}
       className={`group flex flex-col my-1.5 ${isOwn ? 'items-end' : 'items-start'}`}

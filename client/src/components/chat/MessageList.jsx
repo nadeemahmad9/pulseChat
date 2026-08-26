@@ -254,6 +254,7 @@ export default function MessageList({ onMediaClick, onOpenForward }) {
         <ContextMenu
           x={contextMenu.x}
           y={contextMenu.y}
+          message={contextMenu.message}
           isOwn={(contextMenu.message.sender?._id || contextMenu.message.sender) === user._id}
           onReply={() => setReplyingToMessage(contextMenu.message)}
           onReact={(emoji) => toggleReaction(contextMenu.message._id, emoji)}

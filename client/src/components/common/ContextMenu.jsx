@@ -79,9 +79,11 @@ import { Reply, Forward, Copy, Edit, Trash2 } from 'lucide-react';
 
 const REACTION_EMOJIS = ['👍', '❤️', '😂', '😮', '😢', '🙏'];
 
-export default function ContextMenu({ x, y, isOwn, onReply, onReact, onForward, onCopy, onEdit, onDelete, onClose }) {
+export default function ContextMenu({ x, y, message, isOwn, onReply, onReact, onForward, onCopy, onEdit, onDelete, onClose }) {
   const ref = useRef(null);
   useOutsideClick(ref, onClose);
+
+  if (message?.isDeleted) return null;
 
   const style = {
     top: Math.min(y, window.innerHeight - 280),
