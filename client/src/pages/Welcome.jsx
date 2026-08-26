@@ -45,7 +45,7 @@ export default function Welcome({ onGetStarted }) {
                 className="relative z-10 max-w-4xl mx-auto w-full flex items-center justify-between"
             >
                 <div className="flex items-center gap-2">
-                    <div className="flex items-center justify-center shadow-md shadow-indigo-500/25">
+                    <div className="flex items-center justify-center  shadow-indigo-500/25">
                         <img className="h-8 w-8 md:h-9 md:w-9" src="chatLogo.png" alt="" />
 
                     </div>
