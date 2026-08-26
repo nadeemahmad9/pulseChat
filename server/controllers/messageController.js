@@ -189,7 +189,7 @@ const deleteMessage = async (req, res) => {
   }
 };
 
-// @desc    Add / Remove Reaction
+// @desc    Add / Remove Reaction (Multi-reaction per user support)
 // @route   POST /api/messages/:id/react
 // @access  Private
 const reactMessage = async (req, res) => {
@@ -203,18 +203,16 @@ const reactMessage = async (req, res) => {
       return res.status(404).json({ message: 'Message not found' });
     }
 
-    const existingReactionIndex = message.reactions.findIndex((r) => r.user.toString() === userId.toString());
+    // Check karein ki kya THIS exact user ne THIS exact emoji react kiya hai
+    const existingIndex = message.reactions.findIndex(
+      (r) => r.user.toString() === userId.toString() && r.emoji === emoji
+    );
 
-    if (existingReactionIndex > -1) {
-      if (message.reactions[existingReactionIndex].emoji === emoji) {
-        // Toggle off if same emoji clicked
-        message.reactions.splice(existingReactionIndex, 1);
-      } else {
-        // Change emoji
-        message.reactions[existingReactionIndex].emoji = emoji;
-      }
+    if (existingIndex > -1) {
+      // 1. Agar wahi emoji dobara click kiya -> Remove (Toggle off)
+      message.reactions.splice(existingIndex, 1);
     } else {
-      // Add new reaction
+      // 2. Agar naya/alag emoji click kiya -> Add as additional reaction
       message.reactions.push({ user: userId, emoji });
     }
 
