@@ -204,8 +204,8 @@ export default function MessageBubble({ message, isOwn, onContextMenu, onReact, 
     >
       <div
         className={`relative max-w-[85%] sm:max-w-[70%] rounded-2xl p-3 shadow-xs transition ${isOwn
-            ? 'bg-indigo-600 dark:bg-[#005c4b] text-white rounded-br-xs'
-            : 'bg-white dark:bg-[#202c33] text-gray-900 dark:text-gray-100 rounded-bl-xs border border-gray-200/60 dark:border-transparent'
+          ? 'bg-indigo-600 dark:bg-[#005c4b] text-white rounded-br-xs'
+          : 'bg-white dark:bg-[#202c33] text-gray-900 dark:text-gray-100 rounded-bl-xs border border-gray-200/60 dark:border-transparent'
           }`}
       >
         {/* Sender name in groups */}
@@ -220,8 +220,8 @@ export default function MessageBubble({ message, isOwn, onContextMenu, onReact, 
           <div
             onClick={() => onReply(message.replyTo)}
             className={`p-2 mb-2 rounded-lg border-l-4 cursor-pointer text-xs ${isOwn
-                ? 'bg-black/10 border-indigo-300 text-white/90'
-                : 'bg-gray-100 dark:bg-[#111b21] border-indigo-500 text-gray-700 dark:text-gray-300'
+              ? 'bg-black/10 border-indigo-300 text-white/90'
+              : 'bg-gray-100 dark:bg-[#111b21] border-indigo-500 text-gray-700 dark:text-gray-300'
               }`}
           >
             <div className="font-semibold text-[11px] flex items-center gap-1">
@@ -310,16 +310,21 @@ export default function MessageBubble({ message, isOwn, onContextMenu, onReact, 
         </div>
 
         {/* Reactions Display with Dynamic Hover Tooltip */}
+        {/* Reactions Display with Smart Left/Right Positioning */}
         {totalReactions > 0 && (
           <div
-            className="relative inline-block"
+            className={`absolute -bottom-2.5 z-20 ${isOwn ? 'right-2' : 'left-2'
+              }`}
             onMouseEnter={() => setShowTooltip(true)}
             onMouseLeave={() => setShowTooltip(false)}
           >
-            <div className="absolute -bottom-2.5 right-1 flex items-center gap-1 bg-white dark:bg-[#182229] px-1.5 py-0.5 rounded-full border border-gray-200 dark:border-gray-700 text-xs shadow-md cursor-pointer select-none">
+            {/* Emoji Pill Badge */}
+            <div className="flex items-center gap-1 bg-white dark:bg-[#182229] px-1.5 py-0.5 rounded-full border border-gray-200 dark:border-gray-700 text-xs shadow-md cursor-pointer select-none">
               <span className="flex items-center">
                 {Object.keys(groupedReactions).map((emoji, idx) => (
-                  <span key={idx} className="-mr-0.5 text-xs">{emoji}</span>
+                  <span key={idx} className="-mr-0.5 text-xs">
+                    {emoji}
+                  </span>
                 ))}
               </span>
               {totalReactions > 1 && (
@@ -329,9 +334,12 @@ export default function MessageBubble({ message, isOwn, onContextMenu, onReact, 
               )}
             </div>
 
-            {/* Hover Tooltip Popup */}
+            {/* Dynamic Tooltip Popup */}
             {showTooltip && (
-              <div className="absolute bottom-6 right-0 z-40 min-w-[160px] max-w-[220px] bg-slate-900/95 text-white text-xs rounded-xl p-2.5 shadow-2xl border border-slate-700/80 backdrop-blur-md animate-in fade-in zoom-in-95 duration-150 pointer-events-none">
+              <div
+                className={`absolute bottom-7 z-50 min-w-[170px] max-w-[240px] bg-slate-900/95 text-white text-xs rounded-xl p-2.5 shadow-2xl border border-slate-700/80 backdrop-blur-md animate-in fade-in zoom-in-95 duration-150 pointer-events-none ${isOwn ? 'right-0' : 'left-0'
+                  }`}
+              >
                 <div className="font-semibold text-[11px] text-slate-400 border-b border-slate-700/60 pb-1 mb-1.5 flex justify-between items-center">
                   <span>Reactions</span>
                   <span className="text-indigo-400 font-bold">{totalReactions}</span>
