@@ -45,8 +45,8 @@ export default function Welcome({ onGetStarted }) {
                 className="relative z-10 max-w-4xl mx-auto w-full flex items-center justify-between"
             >
                 <div className="flex items-center gap-2">
-                    <div className="h-8 w-8 md:h-9 md:w-9 rounded-lg bg-gradient-to-tr flex items-center justify-center shadow-md shadow-indigo-500/25">
-                        <img className="h-4 w-4" src="chatLogo.png" alt="" />
+                    <div className="h-8 w-8 md:h-9 md:w-9 rounded-lg bg-gradient-to-tr from-indigo-600 to-violet-500 flex items-center justify-center shadow-md shadow-indigo-500/25">
+                        <img className="h-8 w-8" src="chatLogo.png" alt="" />
 
                     </div>
                     <span className="text-lg font-bold tracking-tight bg-gradient-to-r from-white via-slate-200 to-slate-400 bg-clip-text text-transparent">
