@@ -22,7 +22,7 @@ export default function MainLayout({
       <div className="w-16 bg-white dark:bg-[#111b21] border-r border-gray-200 dark:border-gray-800 flex flex-col justify-between items-center py-4 shrink-0 hidden sm:flex z-30">
         <div className="flex flex-col items-center gap-4">
           <div className="w-10 h-10 rounded-2xl text-white flex items-center justify-center font-bold text-lg shadow-md">
-            <img src="chat.png" alt="" />
+            <img src="chatLogo.png" alt="" />
           </div>
         </div>
 
